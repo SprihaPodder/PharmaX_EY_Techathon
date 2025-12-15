@@ -16,14 +16,19 @@
     <meta name="twitter:site" content="@PharmaXAI" />
     <meta name="twitter:image" content="https://pharmaxi.ai/og-image.png" />
 
-    <!-- Block any external Lovable scripts/widgets -->
+    <!-- Block Lovable completely -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-src 'none'; object-src 'none';" />
     <style>
-      #lovable-badge, [data-lovable-widget], [data-lovable], .lovable-badge {
+      #lovable-badge, [data-lovable-widget], [data-lovable], .lovable-badge, iframe[src*="lovable"] {
         display: none !important;
         visibility: hidden !important;
         width: 0 !important;
         height: 0 !important;
         overflow: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
       }
     </style>
   </head>
